@@ -31,7 +31,7 @@ from tensorflow.keras.layers import Dense, Input, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
 
 # Load the base Vision Transformer model
-base_model = TFAutoModel.from_pretrained('google/vit-large-patch16-224')
+base_model = TFAutoModel.from_pretrained('google/vit-base-patch16-224')
 
 # Define the correct input shape
 input_layer = Input(shape=(224, 224, 3))
@@ -59,7 +59,7 @@ history = model.fit(
 )
 
 # Save the model
-model.save('vit_large_model.h5')
+model.save('vit_base_model.h5')
 
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -91,10 +91,10 @@ val_generator = val_datagen.flow_from_directory(
     class_mode='categorical')
 
 # Initialize the feature extractor
-feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-large-patch16-224')
+feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
 
 # Load the base Vision Transformer model
-base_model = TFAutoModel.from_pretrained('google/vit-large-patch16-224')
+base_model = TFAutoModel.from_pretrained('google/vit-base-patch16-224')
 
 # Define the correct input shape
 input_layer = Input(shape=(224, 224, 3))
@@ -122,7 +122,7 @@ history = model.fit(
 )
 
 # Save the model
-model.save('vit_large_model.h5')
+model.save('vit_base_model.h5')
 
 # # Import necessary libraries
 # import os
